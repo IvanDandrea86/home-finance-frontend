@@ -1,0 +1,6 @@
+query UserAccounts {
+  accountsUser {
+    name
+    type
+  }
+}
