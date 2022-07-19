@@ -5,16 +5,14 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 
-import Orders from "../../components/dashboard/Charge";
-import Chart from "../../components/dashboard/Chart";
-import Budget from "../../components/dashboard/Budget";
-import Layout from "../../components/layaout/Layout";
-import SideBar from "../../components/layaout/SideBar";
+
+import Layout from "../../../components/layaout/Layout";
+import SideBar from "../../../components/layaout/SideBar";
 import { NextPage } from "next";
 
-const Dashboard: NextPage = () => {
+const Integration: NextPage = () => {
   return (
-    <Layout description="Dashboard" sections={[]} title="Dashboard">
+    <Layout description="Integration" sections={[]} title="Integration">
       <Box sx={{ display: "flex" }}>
         <SideBar />
         <Box
@@ -42,7 +40,7 @@ const Dashboard: NextPage = () => {
                     height: 240,
                   }}
                 >
-                  <Chart />
+           
                 </Paper>
               </Grid>
               {/* Recent Deposits */}
@@ -55,13 +53,13 @@ const Dashboard: NextPage = () => {
                     height: 240,
                   }}
                 >
-                  <Budget />
+           
                 </Paper>
               </Grid>
               {/* Recent Orders */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-                  <Orders />
+          
                 </Paper>
               </Grid>
             </Grid>
@@ -72,4 +70,4 @@ const Dashboard: NextPage = () => {
   );
 };
 
-export default Dashboard;
+export default Integration;

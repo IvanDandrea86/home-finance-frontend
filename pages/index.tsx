@@ -23,7 +23,7 @@ const Home: NextPage = () => {
           color="secondary"
           size="large"
           onClick={() => {
-            throw new Error("sdadsda");
+            throw new Error("sdadsda", { cause: {name:"myerro",message:"buyme"}});
           }}
         >
           Send Error{" "}

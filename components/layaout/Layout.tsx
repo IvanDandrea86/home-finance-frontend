@@ -13,7 +13,7 @@ const Layout: FC<Props & FooterProps & HeaderProps> = ({
   return (
     <>
       <Header sections={sections} title={title} />
-      <main>{children}</main>
+      <main style={{ width: "100%", height: "auto" }}>{children}</main>
       <Footer description={description} title={title} />
     </>
   );

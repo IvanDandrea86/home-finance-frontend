@@ -14,6 +14,15 @@ const theme = createTheme({
       main: red.A400,
     },
   },
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          margin: "0.65rem",
+        },
+      },
+    },
+  },
 });
 
 export default theme;

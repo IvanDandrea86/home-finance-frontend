@@ -1,7 +1,7 @@
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { literal, object, string, TypeOf } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Paper, Typography, Button, Grid, Avatar } from "@mui/material";
+import { Paper, Typography, Button, Grid, Avatar, Box } from "@mui/material";
 import FormInputText from "./FormInputText";
 import { FC, useState } from "react";
 import { useCreateUserMutation } from "../../graphql/generated/graphql";
@@ -63,7 +63,7 @@ const FormSignup: FC = () => {
   };
 
   return (
-    <Grid>
+    <Grid container spacing={12} justifyContent={"center"}>
       <FormProvider {...methods}>
         <Paper
           elevation={10}
@@ -71,13 +71,14 @@ const FormSignup: FC = () => {
             marginTop: 8,
             width: "30vw",
             display: "flex",
+            padding: "1.75rem",
             flexDirection: "column",
             alignItems: "center",
           }}
         >
           <Grid alignSelf={"center"}>
-            <Avatar>{/* InserIcont */}</Avatar>
-            <Typography variant="h2"> Login </Typography>
+            {/* <Avatar>InserIcont</Avatar> */}
+            <Typography variant="h6"> Signup </Typography>
           </Grid>
 
           <FormInputText
@@ -113,17 +114,24 @@ const FormSignup: FC = () => {
             errors={errors}
             type={"password"}
           />
-
-          <LoadingButton
-            onClick={handleSubmit(onSubmit)}
-            loading={loading}
-            variant={"contained"}
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              flexDirection: "row",
+            }}
           >
-            Register
-          </LoadingButton>
-          <Button onClick={() => reset()} variant={"outlined"}>
-            Reset
-          </Button>
+            <LoadingButton
+              onClick={handleSubmit(onSubmit)}
+              loading={loading}
+              variant={"contained"}
+            >
+              Register
+            </LoadingButton>
+            <Button onClick={() => reset()} variant={"outlined"}>
+              Reset
+            </Button>
+          </Box>
         </Paper>
       </FormProvider>
     </Grid>

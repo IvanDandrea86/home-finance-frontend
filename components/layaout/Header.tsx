@@ -8,7 +8,7 @@ import Link from "@mui/material/Link";
 import LogButton from "../buttons/LogButton";
 import { FC } from "react";
 import { useAuthContext } from "../../context/AuthProvider";
-
+import router from "next/router";
 export interface HeaderProps {
   sections: ReadonlyArray<{
     title: string;
@@ -25,7 +25,14 @@ const Header: FC<HeaderProps> = (props) => {
   return (
     <React.Fragment>
       <Toolbar sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Button size="small">Home</Button>
+        <Button
+          size="small"
+          onClick={() => {
+            router.push("/");
+          }}
+        >
+          Home
+        </Button>
         <Typography
           component="h2"
           variant="h5"
