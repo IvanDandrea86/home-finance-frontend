@@ -1,0 +1,15 @@
+mutation CreateUser($createUserInput: UserCreateInput!) {
+  createUser(createUserInput: $createUserInput) {
+    id
+    email
+  }
+}
+
+# {
+#   "createUserInput": {
+#     "firstName": null,
+#     "lastName": null,
+#     "email": null,
+#     "password": null
+#   }
+# }

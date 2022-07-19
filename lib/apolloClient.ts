@@ -29,10 +29,7 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
     );
   if (networkError) console.log(`[Network error]: ${networkError}`);
 });
-let httpuri: string =
-  process.env.NODE_ENV === "development"
-    ? "http://localhost:3000/graphql"
-    : (process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT as string);
+let httpuri: string =process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT as  string;
 
 const httpLink = new HttpLink({
   uri: `${httpuri}`, // Server URL (must be absolute)

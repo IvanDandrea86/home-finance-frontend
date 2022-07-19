@@ -1,0 +1,9 @@
+query IsLogged {
+  whoAmI {
+    email
+    id
+    Permission {
+      type
+    }
+  }
+}
